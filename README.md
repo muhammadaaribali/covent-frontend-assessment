@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Covent
 
-## Getting Started
+Covent is a Next.js 16 single-page home-seller landing page scaffold. It intentionally provides the accessible foundation and form behavior, while the seller-facing sections remain clearly marked placeholders for the next design pass.
 
-First, run the development server:
+## Local setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other commands: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`, and `npm start` after a build.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/` — App Router entry page, root layout, metadata, and global Tailwind theme.
+- `src/components/ui/` — reusable button, layout primitives, headings, and sample marker.
+- `src/components/sections/` — ordered home-page section components; most are intentional placeholders.
+- `src/components/layout/` — header, mobile menu, footer, and mobile CTA.
+- `src/components/forms/` — client-side demo address form.
+- `src/content/` — typed page copy and section metadata.
+- `src/lib/` — pure validation helpers.
+- `public/images/` — reserved for future imagery.
+- `tests/` — Vitest unit tests for validation.
 
-## Learn More
+## Real versus placeholder
 
-To learn more about Next.js, take a look at the following resources:
+The App Router shell, metadata, fonts, design tokens, landmarks, skip link, responsive header/menu behavior, reusable primitives, address validation, and demo-only form state are working. The page sections contain only their final heading, one short description, and a dashed TODO box; no finished landing-page design or claims are included.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The design decisions are intentionally conservative: Tailwind v4 theme tokens live in `globals.css`, Google fonts use `next/font`, and no data is logged, stored, looked up, or sent.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Next steps
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Build the real content and design for Trust strip, How it works, Costs, Decision aid, Timeline, Handles, Testimonials, FAQ, and Closing CTA. Replace sample copy and add product-specific tests before launch.

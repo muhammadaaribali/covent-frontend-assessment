@@ -1,0 +1,2 @@
+import { AddressForm } from "@/components/forms/AddressForm"; import { Container } from "@/components/ui/Container";
+export function ClosingCta() { return <section id="closing-cta" className="bg-forest py-16 text-white sm:py-24"><Container><h2 className="text-3xl font-semibold sm:text-5xl">Ready to explore your options?</h2><p className="mt-4 max-w-xl text-white/80">A final call to action will live here.</p><div className="mt-8 max-w-xl rounded-card bg-cream p-6 text-ink"><AddressForm /></div></Container></section>; }
