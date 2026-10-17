@@ -8,8 +8,8 @@
   --color-muted: #4a5a55;
   --color-border: #d9d2c5;
   --color-error: #b42318;
-  --font-heading: var(--font-fraunces);
-  --font-body: var(--font-inter);
+  --font-heading: var(--font-outfit);
+  --font-body: var(--font-outfit);
   --radius-card: 1rem;
   --radius-pill: 999px;
   --shadow-card: 0 12px 35px rgb(20 35 31 / 8%);
@@ -19,7 +19,7 @@
 :root { color: var(--color-ink); background: var(--color-cream); }
 html { scroll-behavior: smooth; }
 body { min-width: 320px; font-family: var(--font-body), sans-serif; }
-h1, h2, h3 { font-family: var(--font-heading), serif; }
+h1, h2, h3 { font-family: var(--font-heading), sans-serif; }
 a:focus-visible, button:focus-visible, input:focus-visible {
   outline: 3px solid var(--color-amber);
   outline-offset: 3px;

@@ -27,7 +27,7 @@ Other commands: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`
 
 The App Router shell, metadata, fonts, design tokens, landmarks, skip link, responsive header/menu behavior, reusable primitives, address validation, and demo-only form state are working. The page sections contain only their final heading, one short description, and a dashed TODO box; no finished landing-page design or claims are included.
 
-The design decisions are intentionally conservative: Tailwind v4 theme tokens live in `globals.css`, Google fonts use `next/font`, and no data is logged, stored, looked up, or sent.
+The design decisions are intentionally conservative: Tailwind v4 theme tokens live in `globals.css`, Outfit uses `next/font`, and no data is logged, stored, looked up, or sent.
 
 ## Next steps
 
