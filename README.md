@@ -8,6 +8,8 @@ The visual direction is deliberately premium and editorial: near-black panels an
 
 Section rhythm follows the same rule: the page background is cream, dark backgrounds are reserved for emphasis sections, and white is limited to cards, panels, tables, and inputs. The Decision Aid and FAQ now inherit the cream page background instead of creating full-width white bands; their white surfaces remain bordered so the cream-to-cream seams read as intentional.
 
+The Closing CTA uses a compact near-black panel, a simple amber doorway illustration, and short reassurance checks to give the final action a clear editorial focal point without introducing external imagery.
+
 The final palette and measured WCAG contrast ratios are:
 
 | Token | Value | Role |

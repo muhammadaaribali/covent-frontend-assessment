@@ -276,6 +276,13 @@ export const faqs: readonly Faq[] = [
   { id: "kinds", group: "home", q: "What kinds of homes do you buy?", a: "In this sample answer: most single-family homes, townhouses and condos in the areas we serve. Unusual properties may need a closer look, and in some places we may not buy at all.", link: { label: "Is Covent right for you?", href: "#right-for-you" } },
 ];
 
+export const closingCta = {
+  eyebrow: "Your first step",
+  heading: "Ready to see your options?",
+  body: "Enter your address to see a sample offer, the costs, and your closing dates. No obligation, and you can stop at any step.",
+  checks: ["About 5 minutes", "No obligation", "Fees shown first"],
+};
+
 export const faqHelp = {
   title: "Still have a question?",
   body: "Real contact options would appear here. In this demo they are sample content, and nothing you type is sent anywhere.",
