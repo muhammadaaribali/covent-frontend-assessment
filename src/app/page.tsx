@@ -15,7 +15,10 @@ import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
 export default function Home() {
   return (
     <>
-      <a className="skip-link rounded-pill bg-forest px-4 py-2 text-sm font-semibold text-white" href="#main">
+      <a
+        className="skip-link rounded-pill bg-forest px-4 py-2 text-sm font-semibold text-surface"
+        href="#main"
+      >
         Skip to main content
       </a>
       <Header />
