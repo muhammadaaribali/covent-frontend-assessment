@@ -7,7 +7,9 @@ export function Costs() {
       <div className="costs-inner">
         <header className="costs-head">
           <p className="costs-eyebrow">{costsIntro.eyebrow}</p>
-          <h2 id="costs-heading" className="costs-heading">{costsIntro.heading}</h2>
+          <h2 id="costs-heading" className="costs-heading">
+            {costsIntro.heading}
+          </h2>
           <p className="costs-intro">{costsIntro.body}</p>
         </header>
         <div className="costs-top">
@@ -27,11 +29,18 @@ export function Costs() {
         </div>
         <div className="compare">
           <table className="compare-table">
-            <caption className="compare-caption">Selling to Covent compared with listing with an agent. Sample comparison.</caption>
+            <caption className="compare-caption">
+              Selling to Covent compared with listing with an agent. Sample
+              comparison.
+            </caption>
             <thead>
               <tr>
-                <th scope="col"><span className="sr-only">Topic</span></th>
-                <th scope="col" className="compare-covent">Sell to Covent</th>
+                <th scope="col">
+                  <span className="sr-only">Topic</span>
+                </th>
+                <th scope="col" className="compare-covent">
+                  Sell to Covent
+                </th>
                 <th scope="col">List with an agent</th>
               </tr>
             </thead>
@@ -39,7 +48,9 @@ export function Costs() {
               {comparisonRows.map((row) => (
                 <tr key={row.label}>
                   <th scope="row">{row.label}</th>
-                  <td data-label="Sell to Covent" className="compare-covent">{row.covent}</td>
+                  <td data-label="Sell to Covent" className="compare-covent">
+                    {row.covent}
+                  </td>
                   <td data-label="List with an agent">{row.agent}</td>
                 </tr>
               ))}
@@ -47,10 +58,57 @@ export function Costs() {
           </table>
         </div>
         <aside className="costs-callout">
-          <p><strong>Not sure which fits?</strong> Listing can bring a higher price if you have time and your home is in good shape.{" "}<a href="#is-it-right">See which option suits you</a>.</p>
+          <p>
+            <strong>Not sure which fits?</strong> Listing can bring a higher
+            price if you have time and your home is in good shape.{" "}
+            <a href="#is-it-right">See which option suits you</a>.
+          </p>
         </aside>
-        <p className="costs-caption">Sample figures for illustration. Actual offers vary.</p>
+        <p className="costs-caption">
+          Sample figures for illustration. Actual offers vary.
+        </p>
       </div>
     </section>
   );
 }
+
+/* 
+
+PAGE LOADS
+    |
+    v
+Costs renders
+    |
+    v
+CostReceipt renders
+    |
+    v
+Initialize price state
+    |
+    v
+Calculate fee, repairs, takeHome
+    |
+    v
+Display calculator
+    |
+    v
+USER MOVES SLIDER
+    |
+    v
+onChange runs
+    |
+    v
+setPrice(newPrice)
+    |
+    v
+React updates state
+    |
+    v
+CostReceipt renders again
+    |
+    v
+Calculations run again
+    |
+    v
+Updated amounts appear
+*/

@@ -157,3 +157,38 @@ export function TrustStrip() {
     </section>
   );
 }
+
+/*
+Website Loads
+     |
+     ▼
+TrustStrip Renders
+     |
+     ▼
+Counter Components Initialize
+(value = stat.to, ready = false, run = false)
+     |
+     ▼
+useEffects Execute
+     |
+     ▼
+TrustStrip: setReady(true)
+     |
+     ▼
+Counter: value = stat.from
+     |
+     ▼
+IntersectionObserver Waits
+     |
+     ▼
+TrustStrip Enters Viewport
+     |
+     ▼
+setInView(true) → run = true
+     |
+     ▼
+Counter Animation Starts
+     |
+     ▼
+Final Values Displayed
+*/

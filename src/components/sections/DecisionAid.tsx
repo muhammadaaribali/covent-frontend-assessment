@@ -19,8 +19,10 @@ export function DecisionAid() {
   const onKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
     const last = priorities.length - 1;
     let next: number | null = null;
-    if (event.key === "ArrowRight" || event.key === "ArrowDown") next = active === last ? 0 : active + 1;
-    if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = active === 0 ? last : active - 1;
+    if (event.key === "ArrowRight" || event.key === "ArrowDown")
+      next = active === last ? 0 : active + 1;
+    if (event.key === "ArrowLeft" || event.key === "ArrowUp")
+      next = active === 0 ? last : active - 1;
     if (event.key === "Home") next = 0;
     if (event.key === "End") next = last;
     if (next !== null) {
@@ -34,15 +36,23 @@ export function DecisionAid() {
       <div className="fit-inner">
         <header className="fit-head">
           <p className="fit-eyebrow">{fitIntro.eyebrow}</p>
-          <h2 id="fit-heading" className="fit-heading">{fitIntro.heading}</h2>
+          <h2 id="fit-heading" className="fit-heading">
+            {fitIntro.heading}
+          </h2>
           <p className="fit-intro">{fitIntro.body}</p>
         </header>
         <div className="fit-grid">
-          <div role="tablist" aria-label="What matters most to you" className="fit-tabs">
+          <div
+            role="tablist"
+            aria-label="What matters most to you"
+            className="fit-tabs"
+          >
             {priorities.map((priority, index) => (
               <button
                 key={priority.id}
-                ref={(element) => { tabRefs.current[index] = element; }}
+                ref={(element) => {
+                  tabRefs.current[index] = element;
+                }}
                 id={tabId(index)}
                 type="button"
                 role="tab"
@@ -58,24 +68,72 @@ export function DecisionAid() {
               </button>
             ))}
           </div>
-          <div id={panelId} role="tabpanel" aria-labelledby={tabId(active)} tabIndex={0} className="fit-panel">
+          <div
+            id={panelId}
+            role="tabpanel"
+            aria-labelledby={tabId(active)}
+            tabIndex={0}
+            className="fit-panel"
+          >
             <div key={current.id} className="fit-panel-body">
-              <span className={`fit-badge fit-badge-${current.fit}`}><span className="fit-dot" aria-hidden="true" />{current.fitLabel}</span>
+              <span className={`fit-badge fit-badge-${current.fit}`}>
+                <span className="fit-dot" aria-hidden="true" />
+                {current.fitLabel}
+              </span>
               <h3 className="fit-panel-title">{current.headline}</h3>
               <p className="fit-panel-why">{current.why}</p>
               <dl className="fit-points">
-                <div><dt>The tradeoff</dt><dd>{current.tradeoff}</dd></div>
-                <div><dt>{current.altTitle}</dt><dd>{current.alt}</dd></div>
+                <div>
+                  <dt>The tradeoff</dt>
+                  <dd>{current.tradeoff}</dd>
+                </div>
+                <div>
+                  <dt>{current.altTitle}</dt>
+                  <dd>{current.alt}</dd>
+                </div>
               </dl>
               <div className="fit-actions">
-                <a className="fit-cta" href="#hero">{current.cta}</a>
-                <a className="fit-link" href="#costs">See the numbers</a>
+                <a className="fit-cta" href="#hero">
+                  {current.cta}
+                </a>
+                <a className="fit-link" href="#costs">
+                  See the numbers
+                </a>
               </div>
             </div>
           </div>
         </div>
-        <p className="fit-note">General guidance, not financial advice. Figures and timelines are sample content.</p>
+        <p className="fit-note">
+          General guidance, not financial advice. Figures and timelines are
+          sample content.
+        </p>
       </div>
     </section>
   );
 }
+
+
+/*
+map() renders all 3 buttons
+          |
+          v
+User clicks button 2
+          |
+          v
+index = 1
+          |
+          v
+setActive(1)
+          |
+          v
+State changes: active = 1
+          |
+          v
+DecisionAid re-renders
+          |
+          v
+current = priorities[1]
+          |
+          v
+Content panel updates
+*/
