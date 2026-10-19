@@ -22,7 +22,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={outfit.variable}>
-      <body>{children}</body>
+      <body id="top">{children}</body>
     </html>
   );
 }

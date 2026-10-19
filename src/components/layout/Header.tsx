@@ -1,62 +1,101 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/Button";
+
+import Image from "next/image";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
+
 const links = [
-  ["How it works", "#how-it-works"],
-  ["Costs", "#costs"],
-  ["Is it right for me?", "#is-it-right"],
-  ["FAQ", "#faq"],
+  { href: "#how-it-works", label: "How it works" },
+  { href: "#costs", label: "Costs" },
+  { href: "#is-it-right", label: "Is it right for me?" },
+  { href: "#faq", label: "FAQ" },
 ];
+
 export function Header() {
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
-    const close = (event: KeyboardEvent) => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setOpen(false);
         buttonRef.current?.focus();
       }
     };
-    window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
-  }, []);
+    const onPointerDown = (event: PointerEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    menuRef.current?.querySelector("a")?.focus();
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [open]);
+
+  const goToForm = (event: MouseEvent<HTMLAnchorElement>) => {
+    const target = document.getElementById("hero-address");
+    if (!target) return;
+
+    event.preventDefault();
+    setOpen(false);
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    target.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
+    target.querySelector("input")?.focus({ preventScroll: true });
+  };
+
   return (
-    <header className="border-b border-border bg-cream">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#hero" className="font-heading text-2xl font-bold">
-          Covent
+    <header ref={headerRef} className="hdr">
+      <div className="hdr-pill">
+        <a href="#top" className="hdr-logo" aria-label="Covent home">
+          <Image src="/covent-logo.svg" alt="Covent" width={86} height={32} priority unoptimized />
         </a>
-        <nav
-          id="main-navigation"
-          className={`${open ? "block" : "hidden"} absolute left-0 right-0 top-[73px] z-20 border-b border-border bg-cream px-5 py-4 sm:static sm:block sm:border-0 sm:p-0`}
-          aria-label="Main navigation"
-        >
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
-            {links.map(([label, href]) => (
-              <a
-                key={href}
-                href={href}
-                onClick={() => setOpen(false)}
-                className="text-sm font-semibold text-muted hover:text-ink"
-              >
-                {label}
-              </a>
+
+        <nav aria-label="Main" className="hdr-nav">
+          <ul>
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="hdr-link">{link.label}</a>
+              </li>
             ))}
-            <Button href="#hero">Get my offer</Button>
-          </div>
+          </ul>
         </nav>
-        <button
-          ref={buttonRef}
-          type="button"
-          className="rounded p-2 sm:hidden"
-          aria-expanded={open}
-          aria-controls="main-navigation"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          <span aria-hidden="true">☰</span>
-        </button>
+
+        <div className="hdr-actions">
+          <a href="#hero-address" className="hdr-cta" onClick={goToForm}>Get my offer</a>
+          <button
+            ref={buttonRef}
+            type="button"
+            className="hdr-burger"
+            aria-label="Menu"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span className="hdr-bars" aria-hidden="true" />
+          </button>
+        </div>
       </div>
+
+      {open && (
+        <nav id="mobile-menu" ref={menuRef} aria-label="Mobile" className="hdr-menu">
+          <ul>
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} onClick={() => setOpen(false)}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }
