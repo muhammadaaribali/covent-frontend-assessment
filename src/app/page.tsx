@@ -10,7 +10,6 @@ import { Timeline } from "@/components/sections/Timeline";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
 
 export default function Home() {
   return (
@@ -35,7 +34,6 @@ export default function Home() {
         <ClosingCta />
       </main>
       <Footer />
-      <StickyMobileCta />
     </>
   );
 }

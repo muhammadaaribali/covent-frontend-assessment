@@ -60,6 +60,7 @@ export function AddressForm() {
           }}
           aria-invalid={Boolean(error)}
           aria-describedby={error ? errorId : undefined}
+          aria-required="true"
           autoComplete="street-address"
           className="min-h-11 flex-1 rounded-pill border border-border bg-surface px-4 text-ink placeholder:text-muted"
           placeholder="123 Main Street"

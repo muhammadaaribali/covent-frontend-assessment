@@ -1,7 +1,0 @@
-export function StickyMobileCta() {
-  return (
-    <div className="fixed inset-x-0 bottom-0 z-10 border-t border-border bg-cream/95 p-3 text-center text-sm font-semibold shadow-card sm:hidden">
-      TODO: mobile CTA bar
-    </div>
-  );
-}
