@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { howIntro, steps } from "@/content/home";
 import { HowScene } from "./HowItWorksScenes";
 
-const INTERVAL = 2700;
+const INTERVAL = 5000;
 
 export function HowItWorks() {
   const stageRef = useRef<HTMLDivElement>(null);
@@ -12,7 +12,6 @@ export function HowItWorks() {
   const [canAuto, setCanAuto] = useState(false);
   const [inView, setInView] = useState(false);
 
-  // Motion preference + visibility of the scene
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const sync = () => setCanAuto(!mq.matches);
@@ -28,8 +27,6 @@ export function HowItWorks() {
     };
   }, []);
 
-  // Loop forever. The timer restarts whenever the active step changes,
-  // so a clicked step always gets its full time on screen.
   useEffect(() => {
     if (!canAuto || !inView) return;
     const id = setTimeout(() => setActive((a) => (a + 1) % steps.length), INTERVAL);
@@ -79,7 +76,6 @@ export function HowItWorks() {
         </div>
 
         <div className="hiw-foot">
-          {/* Change the href to your hero address field's id */}
           <a className="hiw-cta" href="#hero-address">Start with your address</a>
           <p className="hiw-note">No obligation. Times, figures and the example address are sample content.</p>
         </div>
