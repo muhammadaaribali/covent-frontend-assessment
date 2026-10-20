@@ -331,7 +331,7 @@ input:focus-visible {
 
 /* Floating pill header */
 section[id] { scroll-margin-top: 6rem; }
-.hdr { position: sticky; top: 0.75rem; z-index: 50; margin-top: 0.75rem; padding: 0 1rem; }
+.hdr { position: sticky; top: 0.75rem; z-index: 50; margin: 0.75rem 0 0; padding: 0 1rem; }
 .hdr-pill { display: flex; align-items: center; gap: 1rem; max-width: 72rem; margin: 0 auto; padding: 0.5rem 0.5rem 0.5rem 1.25rem; background: rgba(255, 255, 255, 0.88); border: 1px solid var(--c-border); border-radius: 999px; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 .hdr-logo { display: inline-flex; flex: none; border-radius: 0.5rem; }
 .hdr-logo img { display: block; height: 2rem; width: auto; }
@@ -360,7 +360,7 @@ section[id] { scroll-margin-top: 6rem; }
 @media (prefers-reduced-motion: no-preference) { .hdr-bars, .hdr-bars::before, .hdr-bars::after { transition: transform 0.25s ease, top 0.25s ease, background-color 0.25s ease; } .hdr-link, .hdr-cta, .hdr-menu a { transition: color 0.2s ease, background-color 0.2s ease; } }
 
 /* ---------- Hero: photo with arch panel ---------- */
-.hero { padding: 0.75rem 1rem 0; }
+.hero { margin: 0.75rem 0 0; padding: 0.75rem 1rem 0; }
 .hero-frame {
   position: relative; display: flex; align-items: flex-end; justify-content: center;
   max-width: 80rem; min-height: 44rem; margin: 0 auto; overflow: hidden;
