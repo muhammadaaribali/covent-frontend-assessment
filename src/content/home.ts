@@ -4,7 +4,7 @@ export const hero = {
   eyebrow: "For home sellers",
   before: "Sell your home on ",
   highlight: "your schedule",
-  after: ", not the market's.",
+  after: ".",
   body: "Enter your address to see what we'd pay and what it costs, with no obligation.",
   checks: ["About 5 minutes", "No obligation", "Fees shown first"],
 };
