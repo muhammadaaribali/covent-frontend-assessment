@@ -35,25 +35,25 @@ Header (floating pill with the Covent logo and an accessible mobile menu), hero 
 
 ## The three UX improvements
 
-The reference (Opendoor's homepage) pushes the offer well, but it leaves some seller worries unanswered. Each improvement below addresses one of them.
+Opendoor's homepage is good at pushing the offer, but it leaves some questions a seller has unanswered. Each change below fixes one of them.
 
-### 1. Costs and trade-offs shown up front
+### 1. Show the costs early
 
-- **Seller problem:** Sellers worry about hidden fees and getting less than a traditional sale. In the reference, cost is answered late, in a short FAQ near the bottom of the page.
-- **My choice:** A dedicated "Know the numbers upfront" section right after the journey. It has three cost cards, a sample offer receipt with a sample-price slider (all lines recalculate from one set of constants), and an accessible comparison table of selling to Covent versus listing with an agent. The hero also states that fees are shown first.
-- **Tradeoff:** Showing fees early may lower click-through, and any figure shown has to stay accurate. All figures are labelled "Sample", and the fee rates live in a single constants file so the receipt, cards and table cannot disagree.
+- **The problem:** Sellers worry about hidden fees and about getting less money than with a normal sale. Opendoor answers this late, in a short FAQ near the bottom of the page.
+- **What I did:** I added a section called "Know the numbers upfront". It has three cost cards, a sample offer receipt with a price slider, and a table comparing selling to Covent with listing with an agent. The hero also says that fees are shown first.
+- **The tradeoff:** Showing fees early might mean fewer people click. Any number I show also has to be correct. To keep it honest, every figure is labelled "Sample", and all the fee rates come from one file, so the receipt, the cards and the table always agree.
 
-### 2. Expectation-setting at the point of entry
+### 2. Tell people what happens next
 
-- **Seller problem:** People hesitate to type their home address into a form when they do not know what happens next or how much work is involved.
-- **My choice:** The address form is surrounded by short reassurances (about 5 minutes, no obligation, fees shown first). In How it works, every step also says what it asks of the seller in time and effort. After a valid submit, the form shows a clearly labelled demo continuation state that repeats what would happen next.
-- **Tradeoff:** More text near the primary action risks clutter. I kept it to one short line of checks beside the form and moved the detail into the steps.
+- **The problem:** People hesitate to type their home address when they don't know what comes next or how much work it will be.
+- **What I did:** Short reassurances sit next to the address form: about 5 minutes, no obligation, fees shown first. In "How it works", each step says how much time and effort it takes. After a valid address, the form shows a clearly labelled demo message about what would come next.
+- **The tradeoff:** More text near the main button can make the page feel crowded. I kept it to one short line of checks and put the details in the steps.
 
-### 3. An honest "Is Covent right for you?" decision aid
+### 3. Help sellers decide if Covent is right for them
 
-- **Seller problem:** Many sellers do not know whether an instant offer or a traditional listing suits them, and one-sided pitches reduce trust.
-- **My choice:** An accessible tabs component with three priorities (move fast, highest price, certainty). Each gives an honest verdict, the trade-off, and when listing with an agent may be the better choice. The Timeline section extends this with a "when do I need to be moved out" slider that shows whether each route fits the date.
-- **Tradeoff:** It may send some visitors toward listing, which can lower conversion. I accept that in exchange for trust, and the visitors who continue are better matched. It also adds content to maintain and an interactive component to test for accessibility.
+- **The problem:** Many sellers don't know whether an instant offer or a normal listing is better for them, and a pitch that only praises one option feels untrustworthy.
+- **What I did:** An "Is Covent right for you?" section where the seller picks what matters most: moving fast, getting the highest price, or having certainty. Each choice gives an honest answer, the downside, and when listing with an agent may be the better option. The timeline section adds a slider for "when do I need to move out" that shows which option fits that date.
+- **The tradeoff:** It may send some visitors toward listing, which could mean fewer sign-ups. I accept that because honesty builds trust, and the people who do continue are a better fit. It also means more content to keep up to date and one more interactive part to test for accessibility.
 
 ## Design direction
 
