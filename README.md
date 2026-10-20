@@ -91,22 +91,7 @@ Typography uses Outfit through `next/font`. The logo is an SVG in `public/covent
 - **No external images.** Visuals are inline SVG and CSS (the logo, the how-it-works scenes, the closing doorway), so there are no image files to optimise and nothing to cause layout shift. Space for each visual is reserved with fixed sizes or aspect ratios.
 - **FAQ structured data.** The FAQ section adds JSON-LD generated from the same data as the visible answers, so the markup cannot drift from the page.
 
-## Verification performed
 
-[ADD: replace each line with what you actually ran and the real result. Delete anything you did not do.]
-
-- [ ] `npm run lint`, `npm run typecheck`, `npm test` and `npm run build` pass with no errors or warnings
-- [ ] Production build (`npm run build` then `npm start`) checked in the browser, console clean in every state
-- [ ] Address form: empty, whitespace-only, valid, Edit address, and both form instances tested
-- [ ] Keyboard-only walkthrough from the skip link to the footer (menu, tabs, accordion, filters, sliders, form)
-- [ ] Layout checked at 320, 375, 414, 600, 768, 900, 1024, 1100, 1280 and 1440 px, including intermediate widths, with no horizontal scroll
-- [ ] `prefers-reduced-motion` tested: no animations, finished states visible
-- [ ] Lighthouse (mobile / desktop) on the live link: Performance [X], Accessibility [X], Best Practices [X], SEO [X]
-- [ ] Automated accessibility check (axe or Lighthouse): [RESULT]
-- [ ] Screen reader spot check on the form, menu and accordion: [TOOL AND RESULT, or "not done"]
-- [ ] Tested on a real phone: [DEVICE AND BROWSER]
-
-Issues found and fixed during manual testing include: [ADD only the ones you actually fixed, for example a double focus ring on the address field, the browser's native validation bubble, horizontal overflow of the testimonials section on phones, and a squeezed table caption on mobile].
 
 ## How I used AI
 
