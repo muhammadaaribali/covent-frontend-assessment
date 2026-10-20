@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { howIntro, steps } from "@/content/home";
 import { HowScene } from "./HowItWorksScenes";
 
-const INTERVAL = 5000;
+const INTERVAL = 2700;
 
 export function HowItWorks() {
   const stageRef = useRef<HTMLDivElement>(null);
