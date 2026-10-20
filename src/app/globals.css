@@ -332,7 +332,7 @@ input:focus-visible {
 /* Floating pill header */
 section[id] { scroll-margin-top: 6rem; }
 .hdr { position: sticky; top: 0.75rem; z-index: 50; margin: 0.75rem 0 0; padding: 0 1rem; }
-.hdr-pill { display: flex; align-items: center; gap: 1rem; max-width: 72rem; margin: 0 auto; padding: 0.5rem 0.5rem 0.5rem 1.25rem; background: rgba(255, 255, 255, 0.88); border: 1px solid var(--c-border); border-radius: 999px; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.hdr-pill { display: flex; align-items: center; gap: 1rem; max-width: 76rem; margin: 0 auto; padding: 0.5rem 0.5rem 0.5rem 1.25rem; background: rgba(255, 255, 255, 0.88); border: 1px solid var(--c-border); border-radius: 999px; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 .hdr-logo { display: inline-flex; flex: none; border-radius: 0.5rem; }
 .hdr-logo img { display: block; height: 2rem; width: auto; }
 .hdr-nav { display: none; margin-left: auto; }
@@ -363,14 +363,14 @@ section[id] { scroll-margin-top: 6rem; }
 .hero { margin: 0.75rem 0 0; padding: 0.75rem 1rem 0; }
 .hero-frame {
   position: relative; display: flex; align-items: flex-end; justify-content: center;
-  max-width: 80rem; min-height: 44rem; margin: 0 auto; overflow: hidden;
+  width: 100%; min-height: 44rem; margin: 0 auto; overflow: hidden;
   background: #d9d0c0; border-radius: 1.75rem;
 }
 .hero-img { object-fit: cover; object-position: 72% 50%; }
 
 .hero-panel {
-  position: relative; z-index: 1; width: min(calc(100% - 2rem), 25rem);
-  padding: 5rem 1.5rem 1.75rem; text-align: center;
+  position: relative; z-index: 1; width: min(calc(100% - 1.5rem), 28rem);
+  padding: 5.5rem 2rem 2.25rem; text-align: center;
   background: var(--c-bg, #f7f3ec); border: 1px solid var(--c-border, #d9d2c5);
   border-bottom: 0; border-radius: 12.5rem 12.5rem 0 0;
   box-shadow: 0 -10px 40px rgba(17, 19, 18, 0.12);
@@ -416,12 +416,12 @@ section[id] { scroll-margin-top: 6rem; }
 
 @media (min-width: 640px) {
   .hero-frame { min-height: 46rem; }
-  .hero-panel { width: 26rem; padding: 5.5rem 2rem 2rem; border-radius: 13rem 13rem 0 0; }
-  .hero-heading { font-size: 2.25rem; }
+  .hero-panel { width: 30rem; padding: 6rem 2.5rem 2.5rem; border-radius: 15rem 15rem 0 0; }
+  .hero-heading { font-size: 2.5rem; }
 }
 @media (min-width: 900px) {
   .hero { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .hero-frame { justify-content: flex-start; padding-left: clamp(2rem, 7%, 6rem); min-height: clamp(42rem, 82vh, 50rem); }
+  .hero-frame { justify-content: flex-start; padding-left: clamp(3rem, 9%, 8rem); min-height: clamp(42rem, 82vh, 50rem); }
   .hero-img { object-position: center; }
 }
 
