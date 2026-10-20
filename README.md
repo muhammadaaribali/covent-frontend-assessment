@@ -4,9 +4,19 @@ A responsive, single-page home-seller landing page for Covent, built for the Cov
 
 - **Live preview:** https://covent-frontend-assessment.vercel.app/
 - **Repository:** https://github.com/muhammadaaribali/covent-frontend-assessment.git
-- **Screenshots:** `docs/screenshots/` (desktop, mobile, address-form error state, address-form demo state)
+## Screenshots
+
+**Desktop**
+
+![Covent landing page on desktop](docs/screenshots/desktop-full.png)
+
+**Mobile**
+
+![Covent landing page on mobile](docs/screenshots/mobile-full.png)
 
 Everything unsupported (statistics, fees, timelines, ratings, testimonials, services) is **sample content** and is labelled as such on the page. No address or other lead data is collected, stored, logged or sent anywhere.
+
+The hero image is AI-generated; the image-generation tool was not recorded.
 
 ## Local setup
 
